@@ -2,10 +2,25 @@ name: Posit Cloud Test Demo
 on: push
 jobs:
   cypress-run:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
       - name: Cypress run
         uses: cypress-io/github-action@v5
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: cypress-report
+          path: cypress/reports/html
+
+          name: cypress-screenshots
+          path: cypress/screenshots
+
+          name: cypress-videos
+          path: cypress/videos
+
+          
