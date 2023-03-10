@@ -9,7 +9,14 @@ module.exports = defineConfig({
     baseUrl:"https://posit.cloud/",
     viewportHeight: 1920,
     viewportWidth: 1080,
-    watchForFileChanges: false
+    watchForFileChanges: false,
+    requestTimeout: 35000,
+    defaultCommandTimeout: 25000,
+
+    env:{
+      positUserName: "",
+      positUserPass: ""
+    }
 
   },
 });

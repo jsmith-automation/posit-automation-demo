@@ -1,10 +1,15 @@
-import homePage from "../../pages/homePage"
+import contentPage from "../../pages/contentPage";
 
-describe('Sample Test', () => {
+describe('Create Projects within a Space', () => {
+
   beforeEach(() => {
-    cy.visit('/')
+    cy.Login()
+    cy.trashRecentTestProject()
   })
-  it('Test - Users can navigate to the Sign Up page by selecting the "Sign Up" button', () => {
-    homePage.elements.signUpButton().click()
+  it('Create a Project within a Space and ASSERT the Posit IDE loads', () => {
+    contentPage.elements.newProjectButton().click()
+    contentPage.elements.newRstudioProjectButton().click()
+    cy.intercept('POST', '**/events/get_events').as('ideLoaded')
+    cy.wait('@ideLoaded').its('response.statusCode').should('equal', 200)
   })
 })
