@@ -1,7 +1,7 @@
 name: Posit Cloud Test Demo
 on: push
 jobs:
-  cypress-run:
+  ui-tests:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -16,12 +16,4 @@ jobs:
         with:
           name: cypress-report
           path: cypress/reports/html
-      
-      # - name: Upload Screenshots
-      #   uses: actions/upload-artifact@v3
-      #   if: always()
-      #   with:
-      #     name: cypress-screenshots
-      #     path: cypress/screenshots
-
           

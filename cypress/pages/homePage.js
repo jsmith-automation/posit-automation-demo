@@ -3,7 +3,7 @@ class homePage {
     elements = {
   
       //Navigation Buttons
-      signUpButton: () => cy.get('.menuItems').contains('Sig1n Up')
+      signUpButton: () => cy.get('.menuItems').contains('Sign Up')
   
     }
   }
