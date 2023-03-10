@@ -7,8 +7,8 @@ module.exports = defineConfig({
      require('cypress-mochawesome-reporter/plugin')(on)
     },
     baseUrl:"https://posit.cloud/",
-    // viewportHeight: 1920,
-    // viewportWidth: 1080,
+    viewportHeight: 1920,
+    viewportWidth: 1080,
     watchForFileChanges: false,
     requestTimeout: 35000,
     defaultCommandTimeout: 25000,
