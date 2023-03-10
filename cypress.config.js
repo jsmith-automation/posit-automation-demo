@@ -10,7 +10,7 @@ module.exports = defineConfig({
     viewportHeight: 1920,
     viewportWidth: 1080,
     watchForFileChanges: false,
-    requestTimeout: 35000,
+    requestTimeout: 25000,
 
     env:{
       positUserName: "",

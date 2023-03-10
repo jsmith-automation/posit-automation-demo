@@ -9,6 +9,8 @@ jobs:
 
       - name: Cypress run
         uses: cypress-io/github-action@v5
+        with:
+          browser: chrome
         env:
           CYPRESS_positUserName: ${{secrets.CYPRESS_POSITUSERNAME}}
           CYPRESS_positUserPass: ${{secrets.CYPRESS_POSITUSERPASS}}
