@@ -17,11 +17,11 @@ jobs:
           name: cypress-report
           path: cypress/reports/html
       
-      - name: Upload Screenshots
-        uses: actions/upload-artifact@v3
-        if: always()
-        with:
-          name: cypress-screenshots
-          path: cypress/screenshots
+      # - name: Upload Screenshots
+      #   uses: actions/upload-artifact@v3
+      #   if: always()
+      #   with:
+      #     name: cypress-screenshots
+      #     path: cypress/screenshots
 
           
