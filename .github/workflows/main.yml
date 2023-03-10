@@ -1,5 +1,8 @@
 name: Posit Cloud Test Demo
-on: push
+on: 
+  push:
+  workflow_dispatch:
+    
 jobs:
   ui-tests:
     runs-on: ubuntu-latest
