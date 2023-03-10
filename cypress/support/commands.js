@@ -1,16 +1,8 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-
 const homePage = require("../pages/homePage");
 const loginPage = require("../pages/loginPage");
 
+// Reusable command to complete the login flow through the UI
+//  as we do not have the necessary API details to support headless auth
 Cypress.Commands.add('Login',()=>{
     cy.visit('/')
     homePage.elements.logInButton().click()
@@ -20,6 +12,13 @@ Cypress.Commands.add('Login',()=>{
     loginPage.elements.logInButton().click()
 })
 
+// Since we do not have programmatic auth, in order to cleanup the previously created
+//  project, we grab the Bearer token from the '/users/me' call
+//
+// Then the Bearer token is used to GET any created project ID's.
+// The project ID is then used in the PATCH request to 'trash'
+//  the previously created project in an effort to eliminate old test data
+//  from interfering with tests.
 Cypress.Commands.add('trashRecentTestProject', () => {
     cy.intercept('GET', '**/users/me').as('me')
     cy.wait('@me').then(xhr =>{
