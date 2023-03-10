@@ -13,6 +13,7 @@ Please automate this scenario using the tools and language of your choice.
 ## Table of Contents
 - [Built With](#built-with)
 - [How to Run](#how-to-run)
+- [Framework Breakdown](#framework-breakdown)
 
 <br>
 
@@ -34,6 +35,8 @@ Please automate this scenario using the tools and language of your choice.
 
 **CI Steps**  
 This suite is setup to run in a CI pipeline using GitHub Actions on every push.
+
+In addition, the manual workflow is enabled. This can be triggered by navigating to the 'Posit Cloud Demo' workflow withing GitHub Actions and selecting 'Run workflow.'
 
 <br>
 
