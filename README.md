@@ -13,6 +13,7 @@ Please automate this scenario using the tools and language of your choice.
 ## Table of Contents
 - [Built With](#built-with)
 - [How to Run](#how-to-run)
+- [Framework Breakdown](#framework-breakdown)
 
 <br>
 
@@ -21,12 +22,15 @@ Please automate this scenario using the tools and language of your choice.
 
 <br>
 
+
 ### How to Run
 
 **Local Steps**
 
 1. Run `npm install` after cloning the repo
-2. Copy and rename the 'cypress.env.example.json' file to 'cypress.env.json'
+2. Copy and rename the 'cypress.env.example.json' file to 'cypress.env.json'  
+![image](https://user-images.githubusercontent.com/127274537/224429320-d5a9f142-57d5-4ee4-a95b-d872d15ec9ef.png)
+
 3. Add valid login credentials to the pre-existing variables in the env json
 4. `npm run cypress:run` to execute the test
 
@@ -34,6 +38,10 @@ Please automate this scenario using the tools and language of your choice.
 
 **CI Steps**  
 This suite is setup to run in a CI pipeline using GitHub Actions on every push.
+
+In addition, the manual workflow is enabled. This can be triggered by navigating to the 'Posit Cloud Demo' workflow withing GitHub Actions and selecting 'Run workflow.'  
+![image](https://user-images.githubusercontent.com/127274537/224429196-84e9e85f-b173-4d0f-8273-6d1c693e56ac.png)
+
 
 <br>
 
